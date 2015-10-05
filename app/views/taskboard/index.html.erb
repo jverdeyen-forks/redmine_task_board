@@ -34,7 +34,7 @@
                     <%= link_to "#{issue.tracker} ##{issue.id.to_s}", :controller => :issues, :action => :show, :id => issue.id %>
                   </p>
                   <p class="issue-priority">
-                    <%= issue.priority.name %>
+                    <%= issue.estimated_hours %>
                   </p>
                 </div>
                 <h3><%= link_to issue.subject, :controller => :issues, :action => :show, :id => issue.id %></h3>
