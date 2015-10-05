@@ -27,7 +27,7 @@
                   <%= link_to "#{issue.tracker_name} ##{issue.id.to_s}", :controller => :issues, :action => :show, :id => issue.id %>
                 </p>
                 <p class="issue-priority">
-                  <%= issue.total_estimated_hours %>
+                  <%= issue.estimated_hours %>
                 </p>
               </div>
               <h3><%= link_to issue.subject, :controller => :issues, :action => :show, :id => issue.id %></h3>
@@ -51,7 +51,7 @@
                   <%= link_to "#{issue.tracker_name} ##{issue.id.to_s}", :controller => :issues, :action => :show, :id => issue.id %>
                 </p>
                 <p class="issue-priority">
-                  <%= issue.total_estimated_hours %>
+                  <%= issue.estimated_hours %>
                 </p>
               </div>
               <h3><%= link_to issue.subject, :controller => :issues, :action => :show, :id => issue.id %></h3>
