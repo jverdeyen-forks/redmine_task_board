@@ -33,8 +33,14 @@
                     <input type="checkbox" name="ids[]" value="<%= issue.id.to_s %>" />
                     <%= link_to "#{issue.tracker} ##{issue.id.to_s}", :controller => :issues, :action => :show, :id => issue.id %>
                   </p>
-                  <p class="issue-priority">
-                    <%= issue.estimated_hours %>
+                   <p class="issue-priority">
+                        <% unless issue.done_ratio == nil  %>
+                          <% unless issue.estimated_hours == nil %>
+                            <%= ( ((100 - issue.done_ratio.to_f)/100) * issue.estimated_hours.to_f) %>/
+                          <% end %>
+                        <% end %>
+                      <%= issue.estimated_hours %>
+                      (<%= issue.done_ratio %>%)
                   </p>
                 </div>
                 <h3><%= link_to issue.subject, :controller => :issues, :action => :show, :id => issue.id %></h3>
